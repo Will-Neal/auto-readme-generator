@@ -12,6 +12,11 @@ const questions = [
     },
     {
         type: "input",
+        name: "email",
+        message: "What is your email?"
+    },
+    {
+        type: "input",
         name: "title",
         message: "What is the Title of your project?"
     },
@@ -34,6 +39,16 @@ const questions = [
         name: "license",
         message: "Under what license can others use your work?",
         choices: ["MIT", "Apache-2.0", "BSD-2-Clause", "GPL", "None"]
+    },
+    {
+        type: "input",
+        name: "contribute",
+        message: "How can others contribute to the project?"
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "What tests have or can be performed?"
     }
     
 ]

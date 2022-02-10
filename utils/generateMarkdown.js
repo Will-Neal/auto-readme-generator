@@ -58,11 +58,9 @@ function generateMarkdown(data) {
   ## License
 
   ![License Badge](https://img.shields.io/badge/license-${data.license}-orange?style=plastic=appveyor?raw=true)
+  <br>
   [Click here for more information regarding the above license]https://opensource.org/licenses/${data.license}
   ---
-
-  ## Badges
-
   ## How to Contribute
 
   ## Tests
