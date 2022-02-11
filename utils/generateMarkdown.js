@@ -16,7 +16,7 @@ function renderLicenseLink(license) {
   if (license === "None") {
     return ""
   } else {
-    licenseSearch = license.replace("_", "-")
+    licenseSearch = license.replace("_", "-") //Replaces underscores with dashes because shield.io uses underscores or spaces for URLs and opensource.org uses dashes
     return licenseSearch
   }
 }
