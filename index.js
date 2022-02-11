@@ -38,7 +38,7 @@ const questions = [
         type:"list",
         name: "license",
         message: "Under what license can others use your work?",
-        choices: ["MIT", "Apache_2.0", "GPL_License", "BSD_2_Clause"]
+        choices: ["MIT", "Apache_2.0", "GPL_License", "BSD_2_Clause", "None"]
     },
     // {
     //     type:"list",
