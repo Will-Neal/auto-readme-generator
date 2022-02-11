@@ -1,22 +1,19 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+//Generates the link that displays the license badge
 function renderLicenseBadge(license) {
     let licenseBadge = `https://img.shields.io/badge/license-${license}-orange?style=plastic=appveyor?raw=true`
     return licenseBadge
   }
 
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+//Generates the link that has more information on the chosen license
 function renderLicenseLink(license) {
-    let licenseSearch = license.replace("_", "-") //Replaces underscores with dashes because shield.io uses underscores 
+    let licenseSearch = license.replaceAll("_", "-") //Replaces underscores with dashes because shield.io uses underscores 
     let licenseLink = `https://opensource.org/licenses/${licenseSearch}`
     return licenseLink
   }
 
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+//calls the two other license functions (badge and link) to generate the links and then uses template literals to complete the string for the license section of the README
 function renderLicenseSection(license) {
   if (license === "None") {
     return ""
@@ -36,7 +33,7 @@ function renderLicenseSection(license) {
   }
 }
 
-// TODO: Create a function to generate markdown for README
+//Function that generates the actual markdown string. First calls the renderLicenseSection function so that it can then pass the return from that into the license section via a template literal.
 function generateMarkdown(data) {
   let licenseSection = renderLicenseSection(`${data.license}`)
   // let licenseURL = renderLicenseLink(`${data.license}`)  
@@ -83,4 +80,5 @@ function generateMarkdown(data) {
 `;
 }
 
+//exports this function for use in the other javascript files
 module.exports = generateMarkdown;

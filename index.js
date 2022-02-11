@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+// TODO: Packages required for application
 const inquirer = require('inquirer')
 const fs = require('fs')
 const generateMarkdown = require('./utils/generateMarkdown')
 
-// TODO: Create an array of questions for user input
+// TODO: Array of questions for user input
 const questions = [
     {
         type: "input",
@@ -40,12 +40,6 @@ const questions = [
         message: "Under what license can others use your work?",
         choices: ["MIT", "Apache_2.0", "GPL_License", "BSD_2_Clause", "None"]
     },
-    // {
-    //     type:"list",
-    //     name: "licenseURL",
-    //     message: "Select the same license as the previous question",
-    //     choices: ["MIT", "Apache-2.0", "GPL-License", "BSD-2-Clause"]
-    // },
     {
         type: "input",
         name: "contribute",
@@ -59,18 +53,18 @@ const questions = [
     
 ]
 
-// TODO: Create a function to write README file
+// TODO: writes to md file, called by the init function
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
         err ? console.log(err) : console.log('Successfully created README.md')
     )}
 
-// TODO: Create a function to initialize app
+// TODO: Initializes the application, starts the inquirer questions, passes the data to generateMardown and then calls the writeToFileFunction passing the arguments README.md and the string returned by the generateMarkdown function
 function init() {
     inquirer.prompt(questions)
     .then((data) => {
         console.log(data)
-        writeToFile("README.md", generateMarkdown(data))
+        writeToFile("output/README.md", generateMarkdown(data))
     })
 }
 
