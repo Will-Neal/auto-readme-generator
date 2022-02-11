@@ -38,8 +38,14 @@ const questions = [
         type:"list",
         name: "license",
         message: "Under what license can others use your work?",
-        choices: ["MIT", "Apache-2.0", "GPL"]
+        choices: ["MIT", "Apache_2.0", "GPL_License", "BSD_2_Clause"]
     },
+    // {
+    //     type:"list",
+    //     name: "licenseURL",
+    //     message: "Select the same license as the previous question",
+    //     choices: ["MIT", "Apache-2.0", "GPL-License", "BSD-2-Clause"]
+    // },
     {
         type: "input",
         name: "contribute",
@@ -47,7 +53,7 @@ const questions = [
     },
     {
         type: "input",
-        name: "usage",
+        name: "test",
         message: "What tests have or can be performed?"
     }
     
@@ -65,7 +71,6 @@ function init() {
     .then((data) => {
         console.log(data)
         writeToFile("README.md", generateMarkdown(data))
-
     })
 }
 

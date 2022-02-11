@@ -4,6 +4,8 @@ function renderLicenseBadge(license) {
   if(license === "None"){
     return ""
   } else {
+    console.log("renderLicenseSearch")
+    console.log(license)
     return "https://img.shields.io/badge/license-"+ license +"-orange?style=plastic=appveyor"
   }
 }
@@ -14,7 +16,8 @@ function renderLicenseLink(license) {
   if (license === "None") {
     return ""
   } else {
-    return "https://opensource.org/licenses/" + license
+    licenseSearch = license.replace("_", "-")
+    return licenseSearch
   }
 }
 
@@ -24,14 +27,14 @@ function renderLicenseSection(license) {
   if (license === "None") {
     return ""
   } else {
-    renderLicenseBadge;
-    renderLicenseLink
+    renderLicenseBadge(license);
+    renderLicenseLink(license)
   }
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  
+  let licenseURL = renderLicenseLink(`${data.license}`)  
   console.log(data) 
   return `
   # ${data.title}
@@ -44,7 +47,6 @@ function generateMarkdown(data) {
 
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Credits](#credits)
   - [License](#license)
 
   ## Installation
@@ -59,15 +61,25 @@ function generateMarkdown(data) {
 
   ![License Badge](https://img.shields.io/badge/license-${data.license}-orange?style=plastic=appveyor?raw=true)
   <br>
-  [Click here for more information regarding the above license](https://opensource.org/licenses/${data.license})
+
+  [Click here for more information regarding the above license](https://opensource.org/licenses/${licenseURL})
+  
   ---
   ## How to Contribute
 
+  ${data.contribute}
+  
   ## Tests
+
+  ${data.test}
 
   ## Questions
   
-  If you have any questions contact information can be found at https://github.com/${data.userName}
+  If you have any questions contact the creator at:
+  <br>
+  [${data.email}](mailto:${data.email})
+  <br>
+  [GitHub](https://github.com/${data.userName})
 
 `;
 }
