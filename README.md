@@ -21,6 +21,7 @@
 
   [Click for video demonstration](https://drive.google.com/file/d/1kQd623LJib519p3u2KWfoWWJroaWvN84/view?usp=sharing?raw=true)
 
+  ![Screenshot of Application](https://github.com/Will-Neal/auto-readme-generator/blob/main/assets/photo/screenshot.jpg?raw=true)
   ## License
 
   ![License Badge](https://img.shields.io/badge/license-MIT-orange?style=plastic=appveyor?raw=true)
