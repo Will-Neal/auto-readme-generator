@@ -19,6 +19,8 @@
 
   After calling the application via node, simply respond to the answer prompts and the README will be automatically generated. Easy! The markdown file will be generated in the output folder and can be edited after the fact. Be careful because generating a new README, will overwrite the previous README.
 
+  [Click for video demonstration](https://drive.google.com/file/d/1kQd623LJib519p3u2KWfoWWJroaWvN84/view?usp=sharing?raw=true)
+
   ## License
 
   ![License Badge](https://img.shields.io/badge/license-MIT-orange?style=plastic=appveyor?raw=true)
